@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projet Horloge</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Horloge et Outils</h1>
+      </header>
+
+      <nav>
+        <button onclick="showSection('timer')">Minuteur</button>
+        <button onclick="showSection('stopwatch')">Chronomètre</button>
+        <button onclick="showSection('clock')">Horloge</button>
+        <button onclick="showSection('alarm')">Réveil</button>
+      </nav>
+
+      <main>
+        <section id="timer" class="hidden">
+          <h2>Minuteur</h2>
+          <input type="number" id="timer-input" placeholder="Temps (sec)" />
+          <button onclick="startTimer()">Démarrer</button>
+          <button onclick="stopTimer()">Arrêter</button>
+          <p id="timer-display">00:00</p>
+        </section>
+
+        <section id="stopwatch" class="hidden">
+          <h2>Chronomètre</h2>
+          <p id="stopwatch-display">00:00:00</p>
+          <button onclick="toggleStopwatch()">Démarrer/Arrêter</button>
+          <button onclick="recordLap()">Tour</button>
+          <button onclick="resetStopwatch()">Reset</button>
+          <ul id="laps"></ul>
+        </section>
+
+        <section id="clock" class="hidden">
+          <h2>Horloge</h2>
+          <p id="clock-display">HH:MM:SS</p>
+        </section>
+
+        <section id="alarm" class="hidden">
+          <h2>Réveil</h2>
+          <input type="time" id="alarm-time" />
+          <input type="text" id="alarm-message" placeholder="Message" />
+          <button onclick="addAlarm()">Ajouter</button>
+          <ul id="alarm-list"></ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/timer.js"></script>
+    <script src="scripts/stopwatch.js"></script>
+    <script src="scripts/clock.js"></script>
+    <script src="scripts/alarm.js"></script>
+  </body>
+</html>
